@@ -14,18 +14,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #555;
 }
 
 #calc-body {
+    border: 2px black solid;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
+    padding: 8px;
+    background: white;
 }
 
 #display {
-    border: 2px black solid;
     min-width: 16px;
     min-height: 32px;
     text-align: right;
+    background: #999;
+    color: black;
+    padding: 4px;
 }
 
 #keys {
