@@ -1,5 +1,6 @@
-let displayValue = '0';
-let currOp = '';
+let displayValue = '';
+let acc = 0;
+let currOp = '+';
 let num1 = '';
 let num2 = '';
 
@@ -8,8 +9,33 @@ function begin() {
 }
 
 function clearDisplay() {
-    displayValue = '0';
+    displayValue = ''
     display.textContent = displayValue;
+}
+
+function clearAcc() {
+    acc = 0;
+}
+
+function setDisplay(val) {
+    displayValue = val;
+}
+
+function updateDisplay() {
+    display.textContent = displayValue;
+}
+
+function setCurrOp(op) {
+    currOp = op;
+}
+
+function resetCurrOp() {
+    setCurrOp('+');
+}
+
+function clearAll() {
+    clearAcc();
+    clearDisplay();
 }
 
 function add(a,b){
@@ -62,18 +88,22 @@ for (const numKey of numberKeys.children ) {
         displayValue = displayValue + e.target.textContent;
         display.textContent = displayValue;
     })
-
 }
 
 for (const funcKey of funcKeys.children ) {
     funcKey.addEventListener("click", (e) => {
-        if( e.target.textContent === '='){
-            displayValue = operate(currOp, num1, displayValue);
-        } else if(e.target.textContent === 'c'){
+        if( e.target.textContent === 'c'){
+            clearAll();
             clearDisplay();
+        } else if(e.target.textContent === '='){
+            acc = operate(currOp, acc, displayValue);
+            displayValue = acc;
+            clearAcc();
+            resetCurrOp();
         } else {
-            currOp = e.target.textContent;
-            num1 = displayValue;
+            acc = operate(currOp, acc, displayValue);
+            setCurrOp(e.target.textContent);
+            setDisplay(acc);
             clearDisplay();
         }
         display.textContent = displayValue;
