@@ -1,5 +1,45 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+}
+
 #display {
     border: 2px black solid;
     min-width: 16px;
     min-height: 16px;
+}
+
+#keys {
+    display: flex;
+}
+
+.key-row,
+.key-column {
+    display: flex;
+}
+
+.key-column {
+    flex-direction: column;
+}
+
+.key-row button,
+.key-column button {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+
+#function-keys {
+    display: flex;
+    flex-direction: column;
+}
+
+#function-keys .key-row {
+    flex-grow: 1;
 }
