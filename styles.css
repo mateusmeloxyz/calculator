@@ -9,10 +9,23 @@ html {
     margin: 0;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calc-body {
+    display: flex;
+    flex-direction: column;
+}
+
 #display {
     border: 2px black solid;
     min-width: 16px;
-    min-height: 16px;
+    min-height: 32px;
+    text-align: right;
 }
 
 #keys {
