@@ -1,5 +1,65 @@
-#display {
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #555;
+}
+
+#calc-body {
     border: 2px black solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    background: white;
+}
+
+#display {
     min-width: 16px;
-    min-height: 16px;
+    min-height: 32px;
+    text-align: right;
+    background: #999;
+    color: black;
+    padding: 4px;
+}
+
+#keys {
+    display: flex;
+}
+
+.key-row,
+.key-column {
+    display: flex;
+}
+
+.key-column {
+    flex-direction: column;
+}
+
+.key-row button,
+.key-column button {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+
+#function-keys {
+    display: flex;
+    flex-direction: column;
+}
+
+#function-keys .key-row {
+    flex-grow: 1;
 }
