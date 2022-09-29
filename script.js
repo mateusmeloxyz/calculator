@@ -92,7 +92,7 @@ for (const numKey of numberKeys.children ) {
 
 for (const funcKey of funcKeys.children ) {
     funcKey.addEventListener("click", (e) => {
-        if( e.target.textContent === 'c'){
+        if( e.target.textContent === 'ac'){
             clearAll();
             clearDisplay();
         } else if(e.target.textContent === '='){
